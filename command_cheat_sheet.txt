@@ -1,0 +1,25 @@
+Comandos LINUX
+ls - Lista Diretorio
+pwd - MOstra caminho atual
+cd - vai pro diretorio indicado
+mkdir - cria pasta
+man - visualiza manual do comando especificado
+cat - visualiza o arquivo de texto indicado no diretorio
+rm - remove alguma coisa indicada
+rmdir - remove alguma pasta indicada
+* - char coringa para ler diretorio
+rm -r - remove tudo de forma recursiva (serve para pastas populadas)
+cp arquivo1 copia1 - copia um arquivo
+mv arquivo1 renome1 - renomeia ou move um arquivo
+ls * - Lista todos parametros deste diretorio
+cp -r - copia o diretorio com todos os arquivos
+zip -r - zipa o diretorio sem os arquivos internos (TEM QUE USAR O -r para zipar tudo, QUE COISA)
+unzip - deszipa o diretorio
+unzip -q- deszipa o diretorio o modo quiet de qualquer coisa
+tar -cz xxxx > xxxx.tar.gz - zipa arquivos usando tar -c = create -z = recursive
+tar -xz xxxx < xxxx.tar.gz - zipa arquivos usando tar -x = extract  -z = recursive
+tar -vxzf xxxx.tar.gz - zipa arquivos usando tar -v = verbose -x = extract  -z = recursive -f = nome do arquivo
+tar nao zipa, ele soh empacota servicos usando outro (gzip, bzip2, zip, entre outros). EX.: tar -cjf work.tar.bz2 workspace/
+touch - ajusta hora de modificacao do arquivo
+date - exibe a data do sistema
+head, tail, less - comandos para alterar as visualizacoes dos arquivos de txt e etc..
