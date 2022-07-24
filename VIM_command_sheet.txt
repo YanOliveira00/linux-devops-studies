@@ -1,0 +1,17 @@
+USANDO O VIM NO TERMINAL
+numero i- pode inserir x n[umeros no texto
+numero x- pode excluir x n[umeros de uma linha
+esc volta para linha de navegacao com a seta
+:w - salva um arquivo
+:q - sai de um arquivo
+:qw - salva e sai de um arquivo
+:q! - Sai sem salvar do arquivo
+:qa - sai sem salvar um arquivo
+G - Salta para a linha final
+Num G - Salta para a linha determinad
+$ - salta para o fim da linha atua
+0 - salta para o comeco da linha atual  
+/ - usado para pesquisar alguma palavra especificI
+n - depois de pesquisar, navegar para a proxima ocorrencia. shift+n - navega para a ocorrencia anterior.
+p - paste something
+yy - copy a linha inteira 
