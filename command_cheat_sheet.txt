@@ -23,3 +23,14 @@ tar nao zipa, ele soh empacota servicos usando outro (gzip, bzip2, zip, entre ou
 touch - ajusta hora de modificacao do arquivo
 date - exibe a data do sistema
 head, tail, less - comandos para alterar as visualizacoes dos arquivos de txt e etc..
+INICIANDO CURSO DE LINUX II 
+INICIANDO CURSO DE LINUX II 
+INICIANDO CURSO DE LINUX II 
+INICIANDO CURSO DE LINUX II 
+ 
+ps - Visualiza a lista de processos (usar -e se quiser ver todos os processos) 
+ 
+kill PID - mata o processo com PID especificado -9 forca a destruicao do processo 
+ps - Visualiza a lista de processos (usar -e se quiser ver todos os processos) -f se quiser detalhar os processos 
+grep x - busca alguma coisa com a especificacao direcionada 
+Ex.: ps -ef | grep alguma coisa - Vai procurar um processo chamado alguma coisa. Geralmente Grep eh inserido complementano algo que queremos buscar 
