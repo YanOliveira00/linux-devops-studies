@@ -1,0 +1,2 @@
+zip backup.zip -qr /home/alura/Desktop/GIT/linux-devops-studies
+echo "Backup realizado com sucesso"
