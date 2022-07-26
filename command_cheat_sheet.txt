@@ -31,6 +31,22 @@ INICIANDO CURSO DE LINUX II
 ps - Visualiza a lista de processos (usar -e se quiser ver todos os processos) 
  
 kill PID - mata o processo com PID especificado -9 forca a destruicao do processo 
-ps - Visualiza a lista de processos (usar -e se quiser ver todos os processos) -f se quiser detalhar os processos 
+kill cont/term/stop PID- insere uma condicao no kill, term executa tarefa antes de finalizar, stop para o processo pro estado anterior, cont retorna o estado. etc 
+dps - Visualiza a lista de processos (usar -e se quiser ver todos os processos) -f se quiser detalhar os processos 
 grep x - busca alguma coisa com a especificacao direcionada 
 Ex.: ps -ef | grep alguma coisa - Vai procurar um processo chamado alguma coisa. Geralmente Grep eh inserido complementano algo que queremos buscar 
+ 
+top - executa o gerenciador de processos do linux 
+killall | grep xxx - finaliza todos os processos com nome xxx 
+top -u user - top com processos do usuario especifico 
+diminuir a taxa de atualizacao no top, eh soh pressionar D e inserir o valor em segs 
+mais infos, man top 
+ 
+ 
+ 
+podemos abrir um processo pelo terminal normalmente, no entanto costumamos travar o terminal enquanto executamos o mesmo. Ex.: firefox. 
+CTRL + Z stopa o processo atual.  
+jobs lista os processos do terminal.
+bg num - roda em background um processo ou um num de job especificado 
+ 
+pstree - lista a arvore de processos (outra visao do top) 
