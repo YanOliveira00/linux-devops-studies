@@ -34,6 +34,7 @@ kill PID - mata o processo com PID especificado -9 forca a destruicao do process
 kill cont/term/stop PID- insere uma condicao no kill, term executa tarefa antes de finalizar, stop para o processo pro estado anterior, cont retorna o estado. etc 
 dps - Visualiza a lista de processos (usar -e se quiser ver todos os processos) -f se quiser detalhar os processos 
 grep x - busca alguma coisa com a especificacao direcionada 
+grep -i - busca sem ser case sensitive.
 Ex.: ps -ef | grep alguma coisa - Vai procurar um processo chamado alguma coisa. Geralmente Grep eh inserido complementano algo que queremos buscar 
  
 top - executa o gerenciador de processos do linux 
@@ -50,3 +51,13 @@ jobs lista os processos do terminal.
 bg num - roda em background um processo ou um num de job especificado 
  
 pstree - lista a arvore de processos (outra visao do top) 
+>> - adiciona informacao no fim do arquivo
+> - Cria um arquivo e sobrescreve
+| - adiciona um argumento extra ao comando solicitado
+EX.: ps -l | grep bash ----> comando que lista o processo bash no ps
+< - Forca o arquivo a executar o comando descrito
+cut -d: `expressao delimitador` -f 'numero da coluna' arquivoparacortar -> comando para separar expressao por algum delimitador.
+
+
+
+awk -F':' '{print }' /etc/passwd -> filtro semelhante ao cut com inteligencia aprimorada

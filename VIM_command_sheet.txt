@@ -15,3 +15,5 @@ $ - salta para o fim da linha atua
 n - depois de pesquisar, navegar para a proxima ocorrencia. shift+n - navega para a ocorrencia anterior.
 p - paste something
 yy - copy a linha inteira 
+:%s/palavra/palavra2 -> busca palavra no vim se substitui 1 na linha e busca outra
+:%s/palavra//g -> busca palavra no vim e substitui pelo argumento 2 e passa para outra linha. /g coloca um espaco em branco

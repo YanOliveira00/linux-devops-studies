@@ -1,0 +1,13 @@
+Tipos de arquivos linux ao usar o ls -l:
+
+eh visto pela forma que estah distribuido na descricao.
+b - block file
+c - character file
+l - link file
+s - socket file - para network
+p - pipe filw
+
+ls -lt -> o argumento t adiciona o tempo de modificacao na lista
+
+ls -ltr -> argumento r adiciona de forma regressiva do mais antigo para o mais novo
+
