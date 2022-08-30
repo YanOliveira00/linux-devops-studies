@@ -81,3 +81,7 @@ passwd user - adicionar password para um usuario (tem que ser feito pelo root)
 lsof -u user - comando que lista todos arquivos abertos pelo usuario
 userdel -r user - deleta usuario e a pasta dele no /home/
 groupdel group - deleta grupo 
+##################### SUDO ##########
+sudo - chama um processo como se fosse o root
+su - switch user
+visudo - Abre um vim com as definições do sudo

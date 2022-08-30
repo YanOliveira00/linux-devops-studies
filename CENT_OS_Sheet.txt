@@ -1,0 +1,8 @@
+################################ CENT OS ###############################
+
+curl - testa url
+curl URL -o FILENAME - testa url e salva como arquivo FILENAME
+RPM -ivh ARQUIVO.rpm - Instala arquivo rpm determinado
+rpm -qa - exibe lista com todos os rpms disponíveis na máquina
+RPM -e FILENAME - Apaga um arquivo com nome FILENAME.rpm
+yum install FILE - Busca e instala pacote CENT OS
