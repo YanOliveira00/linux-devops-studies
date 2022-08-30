@@ -61,3 +61,23 @@ cut -d: `expressao delimitador` -f 'numero da coluna' arquivoparacortar -> coman
 
 
 awk -F':' '{print }' /etc/passwd -> filtro semelhante ao cut com inteligencia aprimorada
+2>> - Redireciona apenas o erro para o arquivo que vai receber o append
+&>> - Redireciona toda a saida do comando para o arquivo que vai receber o append
+ /dev/null/ - direcionar coisas para a pasta dev/null apaga o conteúdo proposto. É uma forma de zerar arquivos sem usar o rm
+
+exemplo: cat /dev/null > test.txt - apaga o conteúdo do arquivo txt.
+exemplo: sudo apt-get install vim -y > /dev/null - a saida do comando apt-get não aparecerá na tela e nem estará em lugar nenhum do /dev/null/
+uso do 2>>: free -m 2>> temp/log//error.txt - envia apenas a mensagem de erro para o error.txt ... Ótimo para logs
+uso do &>>: free -m &>> temp/log//error.txt - envia toda a mensagem para o error.txt ... importante para track
+wc -l FILE --> Conta o número de linhas de um arquivo
+id nomeUSER - comando para ver o ID do usuario
+/etc/passwd - arquivo que possui informacoes sobre os users da maquina
+useradd nomeUSER - comando para criar usuario
+groupadd nomeGroup - comando para criar grupo
+usermod -aG usrgroup username - Comando para adicionar user num grupo
+
+passwd ansible
+passwd user - adicionar password para um usuario (tem que ser feito pelo root)
+lsof -u user - comando que lista todos arquivos abertos pelo usuario
+userdel -r user - deleta usuario e a pasta dele no /home/
+groupdel group - deleta grupo 
