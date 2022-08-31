@@ -85,3 +85,31 @@ groupdel group - deleta grupo
 sudo - chama um processo como se fosse o root
 su - switch user
 visudo - Abre um vim com as definições do sudo
+######################################## Services ###########################
+
+systemctl enable service - comando para habilitar serviço
+systemctl status SERVIÇO - comando para habilitar serviço
+systemctl disable SERVIÇO - comando para desabilitar serviço
+systemctl is-enable service - comando verificar se serviço tá on
+################# PROCESSES ###########
+top - abre gerenciador do linux
+ps - lista processos
+ps -ef - lista processos e enumera numa lista de filhos
+ps aux - lista processos com mais detalhes
+kill PID - mata processo e seus filhos
+kill -9 PID - mata processo forçado mas não seus filhos
+ps -ef | grep SERVICE | grep -v 'grep' | awk {print } | xargs kill 9 - basicamente esse processo mata todos os processos forçadamente
+tar - ferramenta de compressao do linux (USAR --help, pq esse comando é enorme)
+#####################################################
+EXTRASecho ##################################################### >> command_cheat_sheet.txt !
+#####################################################
+adduser devops - comando do UBUNTU para criar um usuario. Se usar o user nome vai dar ruim
+visudo abre somente num leitor chamado nano no UBUNTU
+precisa usar o export EDITOR=vim para funcionar o visudo
+wget link - baixar um arquivo
+dkpg link - instalar um arquivo
+apt é o equivalente ao YUM no CentOS
+apt search tree - procura o pacote tree
+apt install file - instala o pacote file
+apt purge file - executa um clean uninstall de um file
+apt remove file - executa um uninstall de um file
