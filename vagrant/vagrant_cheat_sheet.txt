@@ -1,0 +1,8 @@
+**************************VAGRANT*******************************
+
+vagrant global-status --prune - exibe status de todas as maquinas vagrant rodando no local
+vagrant status - exibe status da maquina vagrant rodando no local especifico
+Importante olhar com calma o arquivo Vagrantfile, nele temos o objeto |config| que provisiona recurso via codigo
+Dentro do arquivo podemos descomentar alguns arquivos e setar configs para a vm
+
+Sync Directories: 
