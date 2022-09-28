@@ -1,0 +1,7 @@
+Comandos:
+sudo apt-get install docker.io -> Instala Docker
+docker -v -> Ve versao do docker
+docker images -> consulta imagens guardadas
+docker ps -a -> lista containers em execucao
+docker logs NOME -> verifica log do container NOME
+docker exec xxxxxx -> Executa um comando dentro de um container xxxxxx
