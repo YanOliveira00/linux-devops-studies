@@ -5,3 +5,13 @@ docker images -> consulta imagens guardadas
 docker ps -a -> lista containers em execucao
 docker logs NOME -> verifica log do container NOME
 docker exec xxxxxx -> Executa um comando dentro de um container xxxxxx
+docker stop nome -> para um container que esta rodando
+docker rm nome -> deleta container que esta rodando
+docker run nome -> busca um container para rodar nas iumagens locais ou no dockerhub
+docker run -d nome -> busca um container para rodar nas imagens locais ou no dockerhub e inicia em background
+docker exec -it nome comando -> executa em um container um comando para rodar dentro dele
+docker inspect nome -> Apresenta informacoes sobre tudo que o docker criou naquele container
+docker search nome -> busca um container para rodar no dockerhub sem precisar do nome no dockerhub
+docker pull  nome -> busca um container no dockerhub e baixa a imagem localmente
+docker rmi nome -> remove uma imagem de container do local 
+docker build path -> builda uma imagem local para usar como um container novo 

@@ -1,0 +1,80 @@
+  60  docker run -d 5432:5432 -d -e POSTGRES_USER='yan'-e POSTGRES_PASSWORD="yan"-e POSTGRES_db="yan_db"--name pg-containerpostgres
+   61* docker run -p 5432:5432 -d -e POSTGRES_USER='yan'-e POSTGRES_PASSWORD="yan"-e POSTGRES_db="yan_db"--name pg-container\postgres
+   62  clear
+   63  docker run -p 5432:5432 -d -e POSTGRES_USER='yan'-e POSTGRES_PASSWORD="yan"-e POSTGRES_db="yan_db"--name pg-containerpostgres
+   64  docker run -p 5432:5432 -d -e POSTGRES_USER="yan" -e POSTGRES_PASSWORD="yan" -e POSTGRES_db="yan_db" --name pg-container postgres
+   65  docker ps -a
+   66  docker logs
+   67  docker inspect pg-container
+   68  docker ps -a
+   69  docker rm dreamy_johnson
+   70  docker rm wonderful_bhabha
+   71  docker rm peaceful_blackburn
+   72  docker rm reverent_ellis
+   73  docker ps -a
+   74  docker rm quirky_wilbur
+   75  docker rm focused_lewin
+   76  docker rm angry_tharp
+   77  docker ps -a
+   78  touch Dockerfile
+   79  nano Dockerfile
+   80  docker build -t python-pg-script .
+   81  rm Dockerfile
+   82  nano Dockerfile
+   83  ls
+   84  docker build -t python-pg-script .
+   85  docker build .
+   86  ls
+   87  cd etc/docker/
+   88  ls
+   89  cd ..
+   90  cd..
+   91  cd ..
+   92  cp Dockerfile /etc/docker/
+   93  cd /etc/docker/
+   94  ls
+   95  docker build -t python-pg-script .
+   96  docker images
+   97  docker build -t python-pg-script .
+   98  nano Dockerfile
+   99  nano list-data-table.py
+  100  docker build -t python-pg-script .
+  101  docker images
+  102  docker exec -it pg-container bash
+  103  docker rm pg-container
+  104  docker stop pg-container
+  105  docker rm pg-container
+  106  docker run -p 5432:5432 -d -e POSTGRES_USER="yan" -e POSTGRES_PASSWORD="yan" -e POSTGRES_DB="yan_db" --name pg-container postgres
+  107  docker exec -it pg-container bash
+  108  docker ps -a
+  109  docker build -t python-pg-script .
+  110  docker ps -a
+  111  docker run --name python-test python-pg-script
+  112  nano list-data-table.py
+  113  docker run --name python-test python-pg-script
+  114  docker ps -a
+  115  docker stop python-test
+  116  docker rm python-test
+  117  docker run --name python-test python-pg-script
+  118  nano list-data-table.py
+  119  nano Dockerfile
+  120  docker images
+  121  docker rmi python-pg-script
+  122  docker rmi -f python-pg-script
+  123  docker build -t python-pg-script .
+  124  docker run --name python-test python-pg-script
+  125  docker ps -a
+  126  docker rm python-test
+  127  docker images
+  128  docker run --name python-test python-pg-script
+  129  nano list-data-table.py
+  130  docker rmi python-pg-script:latest
+  131  docker rmi -f python-pg-script:latest
+  132  docker build -t python-pg-script .
+  133  docker run --name python-test python-pg-script
+  134  docker ps -a
+  135  docker rm python-test
+  136  docker run --name python-test python-pg-script
+  137  docker ps -a
+  138  history
+
