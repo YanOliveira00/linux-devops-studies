@@ -29,3 +29,15 @@ chmod u-w -R opt/devopsdir - Removendo a permissao para o OWNER de escrita de fo
 CHMOD COM OCTAL: 4 - read | 2 - WRITE | 1 - Execute. 3 valores que representam respectivamente User : Group : Others .
 Exemplo:
 chmod 754 /opt/webdata - users: 7 (r+w+x) group: 5(r+x) others: 4(r)
+---------------*--------------------*
+---------------*--------------------*
+---------------*--------------------*
+---------------*--------------------*
+Curso Fundamentals 4Linux
+Variaveis locais e globais
+echo /bin/bash -> O simbolo $ retorna o que contem a variavel
+set -> lista todas as variaveis locais na sessao
+unset xxx -> destroi a variavel locais na sessao
+env -> Lista variaveis globais da maquina
+var = dado -> adiciona uma variavel (var) com o dado (dado) na lista de variaveis locais
+export var = dado -> adiciona uma variavel (var) com o dado (dado) na lista de variaveis globais

@@ -1,0 +1,6 @@
+FAT32 - File Alocation Table 32 bit ou 64 (ext) - sistema windows de volumes
+NTFS - New Technology File System - Novo e com sistema de windows
+
+
+ext -> 2,3 ou 4 -> sistema de arquivos do linux padrao
+
