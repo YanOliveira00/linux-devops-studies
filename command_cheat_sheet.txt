@@ -121,3 +121,13 @@ cat /etc/issue.net -> Exibe o que aparece antes do acesso SSH
 history -> Busca os ultimos comandos armazenados no history.bash
 #36000 eh o tamanho do linhas que o history pode armazenar
 fc -l -> lista os ultimos comandos armazenados na sessao
+dicas sobre o man.
+man 1 -> arquivos comuns ao usuario
+man 2 -> rotinas de sistemas UNIX e C
+man e -> rotinas de bibliotecas C
+man 3 -> rotinas de bibliotecas C
+man 5 -> arquivos de configuração
+man 8 -> arquivos binários
+whereis xxx -> busca o caminho raiz  do comando xxx
+whereis -b xxx -> busca o caminho raiz  do comando binário xxx
+which xxx -> busca o local binário xxx
