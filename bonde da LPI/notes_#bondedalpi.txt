@@ -163,9 +163,104 @@ shutdown -r +30 "Reiniciando em 30 minutos" - Envia para todos os users que rein
 shutdown -c "cancelando reboot" - manda pra todos users
 
 
-DAY 3 
+DAY 3 - Manipulações de arquivos e diretórios.
 
 #bin/sh
+ls --color=auto - colore arquivo caso o terminal suporte cores
+
+file~ => geralmente usado para arquivos de backup.
+
+ls -B - lista arquivos e exclui os backups.
+
+ls -F = lista pastas
+
+ls -l = lista longa
+
+ls -F = lista links simbolicos tbm
+
+ls -p = 
+
+ls -n = lista em formato numérico
+
+ls -lac = lista com o c time
+
+ls -lXr = lista de forma invertida
+ls -laR = lista de forma recursiva (Dentro das pastas)
+
+rmdir -p = Apaga pastas vazias 
+
+Manipulação de arquivos:
+
+cat - ler arquivo, consulta
+cat -n - exibe a linha do arquivo
+cat -s - inibe linhas em brancas
+cat -b - exibe só linhas que tem no arquivos
+cat -E - add um $ no final de cada linha, serve para identificar o final da linha, bom pra DEV.
+cat -T - coloca um caracter nos espaços entre tabulações.
+xzcat e bzcat - ler arquivos bz e xz.
+tac - cat ao contrário.
+tac -s a teste - adiciona a como quebra de linha.
+rm -rf - exclui forçado
+
+cp a b- copia para uma pasta b ou cria um arquivo novo que é uma cópia de a
+
+cp -rfv = -v mostra o que é feito na cópia (verbose); -r recursivo; -f forçado
+
+cp -vu = compara data e se tiver diferença copia em cima
+
+cp -x = 
+
+mv - move um arquivo ou renomeia se estiver no mesmo lugar
+
+extensões: 
+
+
+Editores de texto:
+
+vi 
+i - insert 
+esc :wq! - grava e sai
+
+Day 4 - curingas
+
+* - inclui qualquer caracter
+
+ls a* - lista arquivos que comecem com a
+
+ls a*r - arquivos que comecem com a tenham r no fim
+
+ls m? - lista arquivos com m de início e 1 caracter curinga extra apenas
+ls m?? - lista arquivos com m de início e 2 caracter curinga extra apenas
+ls m[a-c] - lista arquivos com filtro m e caracter entre a e c
+ls [^abc] - lista arquivos que não terminam com 'abc'. ^ = caracter de negacao
+
+ls x{zd,ze,zm} - lista arquivos com a combinação x+zd, x+ze e x+zm {} = combinação
+
+
+comandos:
+
+date - mostra data
+
+date -u - mostra horário UTC
+
+sudo date -s 08:43 - ajusta horário
+
+sudo date 101007452020 - ajusta horário para 101207452020 (12/10/2020 07:45)
+
+hwclock --systohc - horário do hardware
+ 
+date +%d-%y = lista dia e ano
+
+date --date='01234567890'  - exibe o formato unixtime para um horario legivel
+
+df - lista blocos
+
+df 
+
+
+
+
+
 
 
 
