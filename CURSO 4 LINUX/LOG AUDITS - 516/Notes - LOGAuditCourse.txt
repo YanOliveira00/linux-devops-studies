@@ -1,0 +1,77 @@
+Log é importante para auditoria e segurança
+
+NBR ISO/IEC 27002:2013
+
+Serviços:
+syslog - não suporta tcp udp com log remoto, sem criptografia, sem armazenamento em bd
+syslog-ng - tem versão enterprise
+rsyslog - versão comunnity
+
+configs:
+facilidade: identifica o serviço que ele quer ver
+ftp; auth;cron;lpr;mail;daemon;local etc.
+nível: Criticidade do alerta (crit, warn, info)
+Alert (err, notico, emerg)
+Arquivo: Nome de onde teve o log
+ex:
+mail.err /var/log/mail.err (erro de email no arquivo var/log)
+
+
+suporte@192.168.56.11 /12 ou 13/ senha: suporte
+
+ls -l /var/log/
+
+ubuntu syslog
+
+/var/log/syslog -> log de servicos
+/var/log/dmess -> log de interface
+
+as distros mudam mas tudo fica no /var/log no geral.
+
+
+comandos:
+dmesg -> conteudo de hardware conectado
+last -> exibe log de login e logou
+lastlog -> exibe log de logout
+lastb -> exibe tentativas falhas de logar no sistema
+
+criar um logfile
+criar no arquivo de log que vc quer, exemplo:
+sudo vim /e	tc/rsyslog.d/nome.conf
+
+dentro do arquivo vc seta o parametro, por exemplo
+cron.*	/var/log/cron.log (ou seja, tudo que for analisado do cron vai se jogado no cron.log)
+
+
+
+log rotate:
+crontab faz automaticamente, basicamente eh diminuir o tamanho dos logs mais antigos periodicamente para nao engargalar os disco e consumir mais recursos ou o arquivo ficar muito grande at[e para pesquisar.
+
+como funciona:
+
+no geral as configs ficam em /etc/logrotate.d/nome do log (pro exemplo, apt)
+
+
+Dar privilegio sudo para yoliveira:
+adduser yoliveira
+usermod -aG sudo yoliveira
+
+
+
+auditd
+
+sudo auditctl -w /etc/passwd -p rwxa (adiciona regra para pegar tudo do /etc/passwd -p rwxa
+
+auditd -> eh um software de auditoria basica no linux usado no curso, onde vc pode criar regras para monitoria e verificar nas pastas /var/log/audit/audit.log
+
+
+sudo ausyscall --dump -> verifica o dump de syscalls no auditd
+
+ausearch - buscar uma regra especifica dentro do auditd
+
+aureport - exibe um report (por exemplo, aureport --summary)
+
+
+
+
+

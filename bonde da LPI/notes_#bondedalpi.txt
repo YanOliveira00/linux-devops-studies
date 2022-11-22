@@ -1,0 +1,172 @@
+BONDE DA LPI
+DAY 1
+
+DAY 2
+
+ls -lha - lista todos os arquivos de forma human readable e em forma de lista
+
+ctrl +L = clear no bash
+
+ctrl +d = da exit no bash
+
+cd ../
+
+caminho relativo, caminho absoluto ->
+
+fhs - file system hierarchy standart - hierarquia de sistema de arquivos.
+
+lsb - linux standart base - trazer padrao entre distros linux.
+
+lrwx - l significa link simbolico como se fosse um atalho
+drwx - d diretorio
+
+dentro do /bin/ arquivo binarios
+dentro do /boot/ arquivos de boot - vmlinuz eh o kernel do linux
+
+
+/etc - Arquivos de configuração globais
+ /etc/opt - Arquivos de configuração para aplicativos em /opt
+ /etc/X11 - Arquivos de configuração para o X Window System 11
+/home - Armazenamento de dados de contas de usuários normais
+/root - Armazenamento de dados de contas do superusuário
+/lib - Bibliotecas essenciais do sistema, de binários localizados em /bin e /sbin
+/mnt - Sistema de arquivos montado temporariamente
+/media - Ponto de montagem de mídias removíveis (como pen-drives, cd-rom)
+/opt - Pacotes estático de aplicações
+/proc - systema de arquivos virtual, onde pode fazer a interação com o kernel
+     e processos do sistema
+/tmp - Arquivos temporários. Conteúdo geralmente apagado no reboot nas distribuições
+/usr - (unix system resources) - Hierarquia secundária (não essenciais no boot) para dados compartilhados de usuários
+  /usr/bin - O mesmo que a hierarquia /bin, mas contém binários não essenciais ao
+  funcionamento da máquina ou para o recovery
+  /usr/include - Diretório padrãod para headers
+  /usr/lib - O mesmo que a hierarquia /lib, mas não essenciais ao boot
+  /usr/sbin - O emsmo que o /sbin, mas não essenciais ao boot da máquina
+  /usr/share - Dados compartilhados independentes de arquitetura
+  /usr/src - Armazenamento de código fonte da máquina
+  /usr/X11R6 - - X Window Sysem, versão 11R6
+  /usr/local - Armazenamento de binários não distribuidos na instalação principal
+         da máquina, ou seja, fora do sistema de empacotamento. Também é o local
+         de armazenamento terciário de dados
+/var - Arquivos que são gravados comf requencia (logs, páginas web, email, imagens, etc)
+  /var/lock - Arquivos de lock, usados para controlar corretamente os recursos em uso
+  /var/log - Arquivos de log, usado para logs em geral
+  /var/mail - Caixas de e-mail dos usuários do sistema em formato mailbox
+  /var/run - Contém dados sobre a execução do sistema desde seu primeiro boot 
+          (daemons e usuários)
+  /var/spool - Spooling de tarefas (fila de impressão, cache de pacotes, proxy, etc)
+  /var/spool/mail - Antigo local da caixa de correio de usuários (deve ser usado /var/mail)
+  /var/tmp - Arquivos temporários. Quando usado em modo multi-usuário.
+  
+
+
+
+
+comandos da pasta /dev/
+
+ls -lha | more ou less - pagina a pesquisa
+
+disco so pode ter 4 particao primarias e 4 logicas de cada particao primaria
+
+sda - disco 1 fisico
+sda1 - particao 1 do disco 1
+
+sda5 - partica 1 logica disco 1
+sdb - disco 2 fisico
+sdb1 - particao 1 do disco 2
+
+disco de bloco disco de particao
+
+se o describe for:
+brwx - b de block
+crwx - c de caracter (dispositivo de caracter transfere informacao)
+tty - porta de comunicacao, semelhante ao serial do windows
+
+
+df -h - lista os hds do SO
+
+
+
+
+pasta /etc/
+
+diretorio etc sempre vai ter arquivo de config, boa pratica eh enviar tudo pra la quando se tratar de conf.
+
+pasta /lib/
+
+modulos do kernel e bibliotecas do sistema, algo como as dlls
+
+lib32 = sistema 32 vai popular
+
+pasta /mnt/
+
+lost+found = journal salvando e recuperando arquivos
+media = ponto de montagem convencional
+
+pasta /opt/
+
+concentrador de local dos softwares instalados pelo user
+
+pasta /proc/
+
+informacoes dinamicas do sistema, modelos de processador, memoria, processos, etc
+pode acessar info dos processos
+
+pasta /root
+
+home do root
+
+pasta /run/
+
+guarda informacoes dinamicas desde o ultimo boot; eh um tmpfs - temporary file system. rebootou perdeu
+
+pasta /sbin/
+
+binarios de superuser; shutdown; so root pode usar exceto com permissoes
+
+pasta /srv/
+pasta de arquivos de servidores estaticos ftp;apache;git; etc...
+
+pasta /sys/
+pasta de info referentes ao sistema, kernel, inerente aos devices (blocos, bus, energia, etc)
+
+pasta /tmp/
+diretoria temporario, rebootou perdeu.
+
+pasta /usr/
+Segunda hierarquia de arquivos do linux. Tudo que nao e `essencial` para o sistema. possui lib e sbin tbm, mas apenas para o usr. usr = user.
+
+pasta /var/
+variaveis de todos os tipos, como logs, etc.
+Local= tudo que tiver variavel dos arquivos
+
+
+
+fim dos FHS
+
+ligar e desligar LINUX:
+shutdown -h (halt)|-r (reboot) now
+halt
+poweroff
+reboot
+init 0 - desliga maquina
+init 6 - reboot maquina
+
+ex.:
+
+shutdown -h 18:00 - desliga {as 18h
+shutdown -c - cancela shutdown
+shutdown -h +30 - desliga em 30 mins
+
+
+shutdown -r +30 "Reiniciando em 30 minutos" - Envia para todos os users que reiniciara em 30 mins
+shutdown -c "cancelando reboot" - manda pra todos users
+
+
+DAY 3 
+
+#bin/sh
+
+
+
+

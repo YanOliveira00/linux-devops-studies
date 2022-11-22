@@ -1,0 +1,8 @@
+tipos de arquivo linux" 
+
+[e visto pela forma que estah distribuido na descricao.
+b rw - block file
+c - character file
+l - link file
+s - socket file - para network
+p - pipe filw
