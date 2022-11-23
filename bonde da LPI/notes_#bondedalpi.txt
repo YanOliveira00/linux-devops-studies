@@ -221,6 +221,8 @@ vi
 i - insert 
 esc :wq! - grava e sai
 
+
+
 Day 4 - curingas
 
 * - inclui qualquer caracter
@@ -255,7 +257,159 @@ date --date='01234567890'  - exibe o formato unixtime para um horario legivel
 
 df - lista blocos
 
-df 
+df -h - versao vista humana.
+
+df -i - quantidade de inodes no sistema
+
+df -T - mostra o tipo do bloco
+
+df -aTh - melhor comando
+
+
+arquivo referenciado por inode no linux nao por tamanho
+
+ln -s caminho link - cria um link simbolico na pasta local, o famoso atalho.
+ln caminho link - cria um hard link para o local.	
+
+
+cp -l - cria hard link da copia
+
+du -uh - comando para ver tamanho da pasta sumarizado e visto de forma amigavel
+
+du - ocupacao de cada arquivo na particao
+
+find - localizar arquivos no linux
+tipos
+
+find pasta -name nomeqQuer - 
+
+find . -name mc 
+
+find . -type d -name mc -- escolhe o tipo que quer ver
+find . -type f -maxdepth 2 -name mc - busca pastas pelo tipo f em ate 2 niveis do sistema de arquivos
+
+find . -type f -mindepth 2 -maxdepth 4 -name mc - pesquisa entre niveis 2 e 4 nos arquivos
+
+find . -mtime -1 - busca arquivos que foram modificados a 1 dia atras
+
+find /etc -amin -10 - busca arquivos que foram mod nos ultimos 10 mins
+
+m - modified|a - access|c - created   min - minuto| time - dia + -mais de|- menos de -> 30.
+
+find -gid - pesquisa pelo grupo de id
+find -uid - pesquisa pelo id do user
+find -user - pesquisa pelo user
+-group - pesquisa pelo grupo vigente
+find . -link 2 - pesquisa arquivos que tem 2 links de referencia
+
+free - memoria fisica e swap]
+-h --kilo- mega -giga calculo de 1000  (--kibi --mebi --gibi - calculo de 1024)
+
+grep - pesquisa numa pasta determinado arquivo que contem um valor
+ex.: 
+grep 'www-data' /etc/passwd - pesquisa www-data em passwd
+
+grep -f nomefile path - pesquisa e exibe conteudo do arquivo nomefile em path
+
+grep -i = ignora maiusculo e minusculo
+
+grep -ri = mostra os arquivos que possuem o nome
+
+head - mostra10 primeiras linhas
+nl - numero linhas de um arquivo
+
+cat file | more - pausa página a página de um arquivo
+
+less file - semelhante ao more
+sort file - ordena arquivo numa pasta 
+
+sort -n - ordena de forma numerica
+
+sort -c - retorna se tá ordenada.
+
+sort +1 - ordena pela coluna 1
+sorte +1 -3 - ordena pela coluna 1 a 3
+sort -k 2 - ordena pela coluna 2
+
+sort -t ':' - delimita a coluna pelo :
+
+tail - ve as ultimas 10 linhas
+
+time - informa o tempo da requisição
+
+touch -t unixtime nome - cria arquivo para o horario linux determinado
+
+uptime - o tempo que a máquina tá on
+
+dmesg - exibe mensagem do ring buffer do kernel.
+dmesg -t - timestamp
+dmesg -c - espera buffer em tempo real
+
+echo - exibe mensagem na tela
+-n não quebra linha
+-e habilita caracteres especiais
+
+su - switch user eleva pro root
+su - -> limpa todas var de ambiente no su.
+
+sudo - eleva pro root com senha do usuario
+
+usr/bin/su - caminho
+su -
+
+sudo su
+
+adduser guiafoca sudo - add user no grupo sudo
+
+deluser guiafoca sudo - deleta user no grupo sudo
+
+sync - grava o buffer do kernel no disco
+
+uname-retorna nome do so
+uname -a = retorna mais infos
+
+uname -r = retorna a versao do disco na maquina
+'' -v =  data que o kernel foi compilado
+-m = arch do so
+
+reboot - reboota maquina (only root)
+systemctl reboot - reinicia a máquina
+
+reboot -f = força (recomenda-se usar o sync antes)
+
+shutdown -r now =
+
+echo b >/proc/sysrg-trigger - reinicia forçado caso de pau na maquina, uso emergencial
+
+halt - desliga
+
+systemctl halt -
+shutdown -h now
+echo o >/proc/sysrg-trigger - desliga forçado caso de pau na maquina, uso emergencial
+
+shutdown -h 09:40  
+shutdown -c = cancela o shutdown.
+
+wc - word count 
+-l = numero linha
+-w = numero paradas
+
+seq 10 - sequencia de 1 - 10
+seq 2 10- sequencia de 2 - 10
+seq 2 2 10 - sequencia de 2-10 de 2 em 2
+-w - alinha os numeros
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
