@@ -399,6 +399,139 @@ seq 2 10- sequencia de 2 - 10
 seq 2 2 10 - sequencia de 2-10 de 2 em 2
 -w - alinha os numeros
 
+day 5 - WORK 
+
+chattr - change atributtes
+atributos = 
+
+lsattr - lista atributos
+
+chattr +i - protege arquivo, nem com o sudo pode remover ou alterar
+chattr -i - desprotege arquivo.
+chattr -R - muda de forma recursiva
+echo
+
+Atributo:
+
+-a - pode alterar os arquivos mas não pode remover os arquivos
+-i - blinda o arquivo, não pode gravar nem apagar nada. Imutavel
+-e = extends para ser lido, não fica oculto
+-c = atributo que compacta o arquivo de leitura (caso tenha suporte para o atributo)
+-s = atribuição segura
+-S = sync, o arquivo sempre vai ser gravado no arquivo de forma imediata. Para arquivos
+-D = sync, o arquivo sempre vai ser gravado no arquivo de forma imediata. Para diretórios.
+-d = Não inclui arquivo no dump de backup.
+
+cut - corta conteúdo para exibir apenas uma parte dele, semelhante ao cat
+ex.:
+Pegar usuários do etc/passwd
+cut -d ":" -f 1 /etc/passwd - corta o texto com o : como delimitador e pega a primeira coluna do /etc/passwd
+cut -b 1-4 - corta os bytes de cada linha
+cut -c - corta os chars de cada linha
+
+cmp - compara 2 arquivos e exibe um código de diferenças
+diff - compara 2 arquivos com formato mais "Humano"
+diff -u - exibe diferença e onde está
+diff -r - exibe diferença de pastas.
+diff -ru - para pastas e erros
+
+patch - tme que instalar e faz patch de mudanças em algum arquivo.
+
+wheresis - mostra o caminho de determinado arquivo
+
+which - localiza o binário no so
+
+day 5 aula - 
+
+
+ps - processo 
+
+cd /proc/ - é a lista de processo do ps, a pasta da execução dele
+
+cat cmdline - lista o kernel.
+
+$PATH - local que busca os apps.
+PATH=$PATH:novo path
+
+comando em background - inserir & no fim do comando
+bg 1 - exibe comando em background
+
+jobs - exibe comando executando em background
+
+eliminar processo em back
+fg nid - Sobe pra primeiro plano um job em background
+
+ctrl c - elimina o processo em primeiro plano
+
+kill %job - elimina job em background
+
+ ls;tree;sleep 1 = executa vários comandos em sequencia com o ; = programação
+
+ps -a - lista executado em vários terminais
+ps -ax - todos os processos dos terminais e de outros usuários
+ps -aux - lista usuários dos terminais e detalhes de todos os processos
+stat - s = sempre executando
+d= lendo algo do disco
+i= ocioso
+z= processo zumbi
+x = processo finalizado
+
+ps -axm - mostrar detalhes de mem no comando
+ps -axf - mostra os processos como uma arvore
+ps -axe - mostra variaveis de ambiente.
+
+pidof nomedoprocesso - exibe o pid do processo
+pidof -s - retorna apenas o primeiro pid
+pstree - exibe arvore de processos
+pstree -h -p - arvore com p
+
+kill - mata processo
+kill -15 pid - Envia sinal para apagar amigavelmente
+kill -9 pid - Envia sinal terminate pro processo (problema com processos)
+kill -HUP PID - Envia sinal -1
+kill -TERM - sinal -15
+kill -KILL - sinal -9
+pgrep - pesquisa dentro dos processo conteudo selecionado
+pkill -u user processo - elimina processo de outro usuário
+
+killall  processo- finaliza todos processos com o nome
+killall5 - finaliza tudo, só roda com sudo.
+
+nohup processo - protege processo de sinais de outras origens que não sejam o -15 ou -9
+
+top - visualiza processos na máquina em tempo real.
+shift + m - relaciona por uso de memória
+q - ordena por usuário
+k - kill dentro do top
+d - muda o delay de atualização
+
+shift + w - salva customização
+
+nice determina prioridade do programa no linux - 
+
+nice -n prioridade PID - Seta prioridade.
+renice -n 10 -p xxx - Ajusta prioridade de um processo.
+renice -n xx -g grupo - Ajusta prioridade de um grupo.
+
+vmstat - verifica status de memória em tempo real.
+vmstat 1 - atualiza de 1 em 1 segundo informações sobre o computador. memória, etc.
+
+day 5 - multiplexador de terminais
+
+tmux - serve para dividir a tela
+tmux usa-se o ctrl+b para puxar o painel de controle
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
