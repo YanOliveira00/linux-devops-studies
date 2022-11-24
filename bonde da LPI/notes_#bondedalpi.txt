@@ -522,6 +522,110 @@ tmux - serve para dividir a tela
 tmux usa-se o ctrl+b para puxar o painel de controle
 
 
+day 6 - disco e particoes
+
+
+fdisk -
+
+4 partições primárias -
+
+discos físicos
+
+partição extendida - 
+
+extensão do disco fisico
+
+partição lógica = LVM
+
+fdisk -l = lista todas partições de todos os discos
+
+(MSDOS)fdisk /dev/sda = abre comando para o sda
+
+(DENTRO DO FDISK)
+p - status, cabeçalho informações do disco
+o - cria um rotulo novo do disco
+n - cria uma partição
+	p|e - criar partição primária ou extendida
+t - determina o tipo da partição
+82 - Linux swap
+w - salva alterações
+FORA DO FDISK
+
+
+mkfs.tipo /dev/sda|b|c - formata partição determinada.
+
+
+wipefs caminho- destroi dado de partição
+
+gdisk caminho - 
+
+DENTRO DO GDISK:
+? - help
+o - cria mbr na partição selecionada
+n - cria nova partição
+	1 - escolhe o numero da partição
+	2048 - setor inicial
+	xxxx - setor final
+L - muda o tipo da partição
+i - lista os tipos disponíveis
+b - cria backup gpt do disco 
+	determinar nome
+v - verifica o disco se tem problema, permite corrigir
+x - modo expert (bom para uso de storage)
+r - resize
+z - destroi todas partições gpt no local
+FORA
+
+PARTED e GPARTED:
+
+precisa instalar o parted no apt
+
+DENTRO DO PARTED:
+mklabel nome - cria um label para o disco
+mkpart - cria uma partição do disco
+	primary|extended?
+
+print - exibe info do disco
+set numpart boot on - determina que disco será de boot
+
+mkpart 
+	logica
+	sw (SWAP)
+quit
+help mkpart ou outra coisa - abre o help
+unit s - escolhe o formato
+print - printa a lista de discos no local selecionado
+rm -remove partição
+	num
+	y
+FORA DOPARTED
+
+
+cfdisk - outro particionador mais gráfico
+é completamente gráfico, tem que só slecionar o que fazer com a teclas
+
+
+mkfs.tipo path -
+
+mkswap path - cria particao swap no linux
+
+
+no DOS a maior partição tem 2Tb
+
+no GPT a maior partição tem 1Zb
+
+UEFI - Melhorava a BIOS com um composto em C.
+
+POST - Power On Self Test
+
+SecureBoot UEFI - modo seguro
+
+criando um módulo UEFI
+usando cfdisk.
+Tomar cuidado para mudar o tipo para EFI assim chama o grub 
+
+
+apt-get install dosfstools - pacote para criar discos fat e vfat nos particionadores.
 
 
 
