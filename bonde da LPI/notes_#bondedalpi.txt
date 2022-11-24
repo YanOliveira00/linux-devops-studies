@@ -627,6 +627,60 @@ Tomar cuidado para mudar o tipo para EFI assim chama o grub
 
 apt-get install dosfstools - pacote para criar discos fat e vfat nos particionadores.
 
+Planejamento de partições:
+
+Sugestões:
+
+Desktop:
+-/ -20gb
+-/usr - 15gb
+-/var - 10gb
+-/home - 500gb
+- swap - 8Gb
+
+Outras sugestão: 
+- / - 50 Gb
+- /home - 930 Gb
+- swap - 8 Gb
+
+
+Email Server: 
+- / - 20Gb
+- /var - 900Gb
+- /home - 5Gb
+- swap - 16gb (o mesmo da memória)
+
+File server 
+
+- / - 20Gb
+- /home - 5Gb
+- swap - 8gb
+- /data - 900Gb
+
+Web Server:
+ 
+- / - 20Gb
+- /home - 5Gb
+- swap - 8Gb
+- /var - 950Gb
+- /var/www
+- /var/log
+
+
+
+migrar uma partição pra outra
+
+mkdir /tmp/mount_var - criar uma pasta
+mount /dev/sda|b|b /tmp/mount_var - monta a partição na pasta
+
+fstab
+
+adicionar o caminho de montagem + o que ele quer adicionar nesta partição + tipo. No fstab com swap 0 e sw é o passe de verificação (0 - não executa; 1-checa no boot)
+
+reboot
+
+
+
 
 
 
