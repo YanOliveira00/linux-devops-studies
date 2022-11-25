@@ -845,9 +845,152 @@ su -n yan
 id user - pega informacoes do user
 
 deluser yan - remove
+ou
+userdel 
 
 cat /etc/groups
 	
 
 adduser usa as configs do adduser.conf 
+ou
 useradd n'ao usa nada.
+
+
+cat /etc/passwd - local que registra info dos users
+Pode adicionar user por lá.
+USER:SENHA:UID:GID:INFOS E COMENTS:DIR HOME:SHELL PADRÃO
+
+cat /etc/shadow - registro de senhas 
+se user dentro de shadow tiver !, significa que não terá senha.
+
+deluser --remove-all-files user - wipa o usuario com seus arquivos e etc.
+deluser --remove-home user - apaga o home do user
+
+grouadd grupo - cria grupo.
+ou
+addgroup grupin-
+
+cat /etc/group - é o /etc/passwd para os grupos
+NOME:SENHA:GID:USERS NESSE GRUPO
+cat /etc/gshadow -
+GRUPO:SENHA:ADMIN:USER DO GRUPO
+
+newgrp - strigus - pertencer a um grupo por uma sessão inteira.
+
+delgroup grupo - remove grupo, mesmas extensões do deluser funciona.
+
+passwd --help - gerenciador de senhas 
+
+passwd - troca senha do usuario normal, se feito em root ele aceita qualquer senha
+
+passwd -d -e = -d deleta senha atual -e expira senha do camarada e pede pra renovar
+
+gpasswd - ajusta senha para o determinado grupo
+
+gpasswd tbm gerencia grupo no linux - gpasswd -a (adiciona usuario ao grupo) -A (ADMIN) -d (deleta)
+
+useradd userdel usermod 
+
+usermod -u 5555 --gid 0 -c "comentario" -d /home/user -s /bin/zsh user->  muda tudo do user
+
+usermod -l userA userB - moda o nome do userB para o userA
+
+chfn - change full name  do usuário
+
+chfn -f nome -h 223232323 
+
+groupmod --help - mod de grupos
+
+lastlog - log de ultimos usuarios logado
+cat /var/log/lastlog - 
+
+groups - mostra o grupo que esse usuario pertence
+
+users - mostra os usuarios do sistema.
+
+DAY 9 - PERMISSIONAMENTO DE ARQUIVOS e USUÁRIOS
+
+ls -l - melhor forma de enxergar informação do arquivo
+
+tipo. - ||perm. owner. rwx||perm group. rw-||perm others. r--
+
+tipos 
+- => texto
+l -link simbolico
+b - block dispositivo
+c - dispositivo de caracter
+d - diretórios
+s - socket
+
+permissões		|| octal	|| quem?
+- => sem permissao		0	u=> dono
+r - leitura			4	g=> grupo dono
+w - escrita			2	o=> outros
+x - execução			1	a=> all
+t - sticky bit			1
+SGUID				2
+SUID				4
+x- permite executar e entrar em arquivo
+r - consigo da ls consultar o conteudo
+w - consigo escrever oconteudo no arq ou dir.
+
+simbol - rwx rwx rwx  = 777
+
+simbol - rw- rw- r-- = 664
+
+chmod = mod as permissões
+modos de uso:
+	chmod u+x teste (adiciona permissão simbolica)
+	chmod -R 754 teste/ (adiciona permissão recursiva)
+chown - mod o dono/grupo do arq/dir
+	chown user arq/dir
+	chown :grupo arq/dir
+-r recursivo.
+
+chgrp - mod o grupo do arq/dir
+	chgrp user arq/dir
+
+umask -> define a permissão padrão do arquivo
+
+stick bit - valido para diretorios chmod 1755. Com o stick bit o dono do arquivo vai ser o único que poderá escrever!
+
+suid or sgid - qualquer pessoa com o suid habilitado executa como se fosse o dono e o sgid é o mesmo pro grupo
+
+
+RESUMO: 
+
+Complemento sobre a explicação SGID / SUID - S maiúsculo
+------------------------------------------------------
+
+Caso você encontre em algum local a permissão SUID ou SGID com  'S' maiúsculo:
+
+--wSr-xr-x 1 gleydson gleydson 28 jan  4 13:39 teste
+
+-rwx--Sr-x 1 gleydson gleydson 28 jan  4 13:39 teste
+
+isto significa que naquela posição do 'S' NÃO existe permissão de execução (4255 ou 2705 octal 
+por exemplo).
+Basicamente é uma interpretação visual e rápida de entender que há uma permissão:
+
+Octal 4255:
+--wSr-xr-x 1 gleydson gleydson 28 jan  4 13:39 teste
+
+Octal 2705:
+-rwx--Sr-x 1 gleydson gleydson 28 jan  4 13:39 teste
+
+
+umask
+
+define qual vai ser a permissão padrão é 0666 e dir 0777
+no caso se umask for 0022 e for criar um arquivo = 0666 - 0022 = 644
+0022 e for criar arquivo - 0777 = 755 - rwx rx rx
+
+como mudar umask - 0002 / 0022 
+
+
+DAY 10 - Editores de TEXT LINUX
+
+
+
+
+
