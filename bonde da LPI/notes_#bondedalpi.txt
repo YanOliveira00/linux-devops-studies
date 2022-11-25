@@ -629,30 +629,171 @@ apt-get install dosfstools - pacote para criar discos fat e vfat nos particionad
 
 
 
+mount /dev/sda|b|c /tmp/mount_var 
+cp -a /var/* /tmp/mount_var
+limpar lost+found
+criar mklost+found em /tmp/mount_var
+ajustar o /etc/fstab
+reboot
+
+/var vai fica na nova particao
+
+
+mount -o remount /var - remonta sistema de arquivos numa m[aquina
+
+mount -o remount,ro /var - remonta apenas leitura
+
+
+mount -o remount,rw /var - remonta apenas leitura e escrita.
+
+apt-get install lsof - lsof lista arquivos em uso
+
+
+lsof - lista todos arquivos em uso
+lsof -t /var - lista arquivos em uso pela pasta
+
+particao que pode ser montada somente leitura 
+/var /tmp
+
+
+resumo DAY 6:
+
+Limites em sistemas de particionamento e sistemas de arquivos
+
+
+Esquema de particionamento 
+Partição MSDOS - 2Tb
+Partição GPT - 1Zb
+
+
+Sistemas de arquivos
+ext2
+
+Tamanho máximo da partição - 2Tb - 16Tb (número de blocos limitados a 65 536)
+
+Tamanho máximo de Arquivo - 16Gb
+ext3
+
+Tamanho máximo da partição 2Tb - 32Tb - (número de blocos limitados a 65 536)
+
+Tamanho máximo de Arquivo - 16Gb - 2Tb
+ext4
+
+Tamanho máximo da partição - 1Eb (número de blocos limitados a 65 536)
+
+Tamanho máximo de Arquivo - 16Tb (para blocos de 4k)
+
+
+Detalhes sobre o cálculo de blocos e como atingir valores máximos, podem ser 
+
+encontrados em: 
+
+https://pt.wikipedia.org/wiki/Ext4
+
+https://pt.wikipedia.org/wiki/Ext3
 
 
 
 
+day 7 - hardware e perif[ericos (config em linux)
+
+hist[oria
+
+IO - input / output - forma como o hardware se comunica com o SO
+
+IRQ - Requisicao de interrupcao - uma forma do processador buscar informacoes de io eh atraves deste registro.
+
+entendendo IO IRQ e DMA
+
+sempre ver o guia.
+
+IRQ era setado direto na placa fisica, via jumper.
+
+cat /proc/interrupts - lista as interrupcoes dos dispositivos de hardware (IRQs)
+
+cat /proc/ioports - info de portas de io, apos a interrupcao no interrupts realiza entrada via ioports
+e1000 - placa de rede
+
+DMA - Acesso direto a memoria - 
+cat /proc/dma - lista dmas
+irqtop - tem que baixar via apt-get. apresenta um menu semelhante ao top so para as irqs
+
+lspci - lista todos os dispositivos pci no sistema
+
+lsusb - lista devices usb no sistema
+
+lshw - tem que instalar. lista todos os hardwares do linux
+
+firmware binario - codigo nao compativel no linux. uma forma de proteger drivers proprietarios.
+
+instalando um firmware proprietario
+
+cd /lib/firmware
+cd /etc/apt
+	ls source.list
+apt-cache search firmware-linux-free
+apt-cache search firmware-linux-nonfree
+nano source.list
+	editar a linha com o debian a seguinte expressao - contrib non-free. 
+sair
+
+apt-get update
+
+
+
+apt-cache search nome
+apt-get install firmware  xxxasasasas 
+
+
+
+ver se a firmware ta certa
+dmesg /root - otimizar o uso do pc
+
+debian packages no google - ele lista todos os pacotes de hardware que podem ser baixados para o debian, pode baixar e instalar.
+
+dentro do pendrive, executar: 
+
+dpkg -i *.deb - instala todos os pacotes debian na sua maquina
+.
+
+
+ACPI - gerenciador dos butoes do power
+
+apt-get install acpid - realiza o pacote para gerenciar o botao power
+
+cd /etc/systemd
+nano logind.conf
+modificar o HandlePowerKey=ignore - o bot'ao nao desliga com o clique no power
+
+pode gerencia pelo logind.conf
 
 
 
 
+Day 8 - Comando para admin
 
 
+adduser --help - adiciona user, --help ver o help
+
+/etc/adduser.conf - ajusta conf do comando users.
+
+skel - arquivos iniciais para o usuario, skeletal.
+
+adduser yan
+
+adduser --uid xxxx -gid 0 --home xxxx/xxxx/xxx - passa parametros ao adduser
+
+useradd xxxx- outra forma de adicionar user, mas permite mais parametros. digitar --help.
 
 
+su -n yan 
 
+id user - pega informacoes do user
 
+deluser yan - remove
 
+cat /etc/groups
+	
 
-
-
-
-
-
-
-
-
-
-
-
+adduser usa as configs do adduser.conf 
+useradd n'ao usa nada.
