@@ -990,7 +990,92 @@ como mudar umask - 0002 / 0022
 
 DAY 10 - Editores de TEXT LINUX
 
+vim - 
+
+sudo apt-get install vim
+i - insere texto na posição
+I - insere no início da linha
+o - modo inserção na outra linha
+O - entrar em modo de inserção uma linha acima
+a - insere um caracter a frente
+A - insere no final da linha
+
+SALVANDO E SAINDO
+:w - Salvar
+:q - SAIR
+:qa - sair de todos os arquivos abertos.
+:wq! - Salvar e sair forçado
+:q! - Sair forçando
+:! hostname - dá um comando no shell, dentro do vim
+:.! - Joga o comando do shell para dentro do arquivo do vim
+:x = Sair e salvar
+ZZ = Sair e salvar tbm
+ZQ = Sair e não salvar
+
+Copiando colando e recortando 
+yy - copia
+p - cola na linah abaixo
+P - cola na linha acima
+d - recorta ou apaga a linha
+D - apaga caracter do cursor até o final de linha
+dG - apaga do cursor até o fim do arquivo.
+dgg - apaga do cursos até o começo do arquivo.
+dd - apaga ou recortar a linha inteira
+x - remove um caracter
+X - remove um caracter anterior (semelhante ao backspace)
+r + letra- replace - substitui o caracter atual pelo novo
+R + letra - substitui todos pra frente 
+dw - deleta uma palavra
+cw - recorta uma palavra
+yw - copiar uma palavra
+d9d - apaga 9 linhas
+y3y - copia 3 linhas
+
+VISUAL
+v = visual - selecionar um pedaço do texto
+CTRL + v - visual block - seleciona um bloco todo
 
 
+VOLTANOD E REFAZENDO
+u - undo - refaz modificações recentes
+CTRL + Z - refazer.
 
+
+BUSCAS
+/palavras = dá find no "palavras"
+n = continua com a busca
+N = Busca em direção baixo-cima
+?word = busca palavra baixo-cima
+gg - vai pra primeira linha
+G - vai pra ultima linha
+
+M - muda o curso pro meio da tela
+H - muda o curso pro alto da tela
+L = muda o curso pro fim da tela
+
+
+MODO DE COMANDO
+:set number - enumera linhas
+:set nonumber - desenumera linhas
+:set hlseartch - colore todas as buscar (usar 'no' pra desmarcar)
+:set tabstop=2 - ajusta o tab pra converter um tamanho fixo
+:set extendtab - Transforma tab em espaços
+:set noerrorsbell -
+:set bg=dark|light - muda esquema de cor
+:set ignorecase = busca ignorando MAiusculo e minusculo
+:set syntax=on - vi identifica sintaxe do arquivo  (caso o arquivo seja yaml, json ou yml)
+:46s/palavra/palavra2 - força o sed na linha 46, troca 1 ocorrencia de palavra por palavra2
+:%s/palavra/palavra2/ - força o sed no documento todo, troca palavra por palavra2, 1 por linha
+:%s/palavra/palavra2/g - força o sed no documento todo, troca palavra por palavra2 em todas ocorrencias
+
+:e novodoc - abre outro doc no vim
+:e! novodoc - força a abertura de outro doc no vim
+:r arqu = força a inserção do conteudo de arqu para o texto atual.
+
+em /home/
+vim .vimrc - dá pra ajustar o vim com os set, automaticamente.
+
+:split arq2- divide a tela em 2 arquivos na horizontal (arquivo atual arq2)
+ctrl + WW - migra a tela 
+:vsplit arq2- divide a tela em 2 arquivos na vertical (arquivo atual arq2)
 
