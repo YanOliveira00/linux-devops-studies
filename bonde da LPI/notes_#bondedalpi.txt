@@ -1079,3 +1079,315 @@ vim .vimrc - dá pra ajustar o vim com os set, automaticamente.
 ctrl + WW - migra a tela 
 :vsplit arq2- divide a tela em 2 arquivos na vertical (arquivo atual arq2)
 
+
+DPKG e APT 
+
+dpkg precisa baixar as dependencias dele. Não resolve dependencias em pacotes .deb
+
+apt -  busca as dependencias e resolve as dependencia, mas ela usa o dpkg como base
+
+
+dpkg -i nomepacote.deb -> instala pacote
+
+dpkg -l = lista aplicativos
+dpkg -l bb - lista o app bb
+
+
+dpkg -r app - desinstala app
+dpkg -P app - desinstala mesmo o PURGE app
+
+dpkg -S /usr/games/bb - lista todos os app aonde esse pacotes pertence
+
+dpkg -I pacote - informações de um pacote
+dpkg -s aplicativo - status do aplicativo instalado
+dpkg -C aplicativo - procura no sistema por arquivos corrompidos.
+dpkg --audit -C
+
+apt-get install app - instala
+apt-get remove app - remove
+apt-get remove --purge app - dá um purge nos arquivos do app.
+apt-get upgrade - atualiza o sistema
+apt-get update - baixa a lista de pacotes mais recentes.
+cat /etc/apt/source.list = arquivo que vc pode colocar seus repos
+
+
+cat /etc/apt/source.list.d/kubernetes.list =>
+curl -s link | sudo apt-key add - instalando kubernetes.
+
+cd /var/cache/apt/archives - Diretório que tem arquivos DEV
+apt-get clean - limpa arquivos de cache do apt na pasta archives.
+apt-cache show pacote - status do app via apt-cache
+
+wget link - pode fazer o download de certo link.
+
+
+rpm -ivh arquivo.rpm - install verbose h-percentual
+rpm -qa - pega todos pacotes instalados rpm (semelhante ao dpkg -l)
+rpm -qa nome - info do pacote
+rpm --help - help padrão do red hat 
+rpm = dpkg do red hat
+apt-get = yum do fedora e red hat
+
+yum ou dnf - dnf é mais atual. Mas os comando são os mesmos do apt
+yum update wget - upgrade do wget
+yumsearch nome - busca pacote com esse nome
+yuminfo wget -
+yum list installed - lista todos os softwares instalados.
+yum grouplist - mostra os grupos disponíveis dos apps que estõa no repositórios
+yum groupinstall "grupo Separado" - instala pacotes o grupo
+
+yum groupremove "grupo" - desinstala os pacotes grupo
+yum repolist - mostra os repos setado para o yum
+cd /etc/yum.repos.d/ - pasta com arquivo dos repos setados.
+
+
+apt-get install -y wget - instala automatico
+apt-get remove --purge wget
+apt-get autoremove - remove arquivos não utilizados
+apt-get install -f bb - Confere o que deu errado no dkpg e tenta ajustar no apt
+
+
+Day 12 - Variáveis de ambiente
+
+
+O que é? é um campo reservado na memória para acessar a qualquer momento. Semelhante a declaração de var, pordefault tudo tem que ser maiusculo
+
+um lugar onde vc buscar e já tá
+
+set - lista variaveis de ambiente completo e shells, suas interações completas
+
+printenv ou env - lista variaveis de ambiente.
+
+echo $VARAMBIENTE - Mostra o conteudo
+printenv PATH - mostra o conteudo de uma variavel de ambiente.
+
+export VARIAVEL=teste - seta uma variável de ambiente que não persiste
+unset VARIAVEL - desmarcar a variável de ambiente, deixa de existir
+
+set VARIAVEL - seta uma variável para apenas o shell ou o script que for criado. 
+
+export VAR="TESTE":asasasas:asasasa = coloca mais de um valor para a variável do ambiente.
+
+LC_MESSAGES - Muda o locale para determinado idioma - mensagens
+
+LC_TIME - muda o relogio para determinado idioma.
+
+LC_ALL - Muda tudo para um determinado idioma, o time, o messages junto
+
+alias teste=12341 = cria uma variável local, no fim da sessao some. serve para 
+
+unalias teste - descria a variável local.
+
+.bash_history = histórico de comandos, fica em /home/user
+.bash_logout = comandos que são executados quando sair do bash.fica em /home/user.
+.bash_login = comandos para executar quando loga
+
+rm arquivos acima = cancela as configs setadas
+
+
+.bashrc = arquivo que le os parametros do bash sempre que logado.
+
+source .bashrc = relê o arquivo e aplica config sem rebootar.
+
+criar ALIAS OU ENV PARA TODOS : 
+
+/etc/profile - mesmo efeito que um bashrc no dir home, mas para todos os users. tudo que tiver no profile persiste para todos os logins
+
+PS1 = var do user, identifica se é user normal ou root.Ajuste ou customiza o que aparece de info do terminal. 
+
+/etc/motd = Message of the Day  - Ajusta a mensagem de login ao acessar o sistema
+
+
+.hushlogin no home = não mostra nada no MOTD.
+
+
+cd /etc/skel - customiza o que vem pro user
+
+/etc/enviroments - local correto para colocar as variáveis de ambiente que são criadas fora de sistema.
+
+DAY 13 - REDES 
+
+Resumo, review básico ccna OSI
+
+app, apresentação, sessão, transporte, rede,enlace,físico
+
+
+Day 14 - IPV6 e Configs de Rede no LINUX
+
+CGNat 
+
+2001:db8::/32 - para docs
+
+fc00::/7 - Rede privada
+
+fe80::/10 - rede local
+
+
+
+ip addr show - ifconfig (descontinuado) - Lista os ips
+
+nomenclatura da BIOS -
+ens192 ens256 - server físico
+
+ip addr show dev devicederede = coloca informação do device na rede
+
+limitação do ifconfig - não mostra mais de 1 ip na mesma interface.
+
+ip -6 addr add xx::1/64 dev interface - adiciona ipv6 na interface
+
+ping - ferramenta de tshoot
+
+traceroute - tracert do windows
+
+apt-get install mtr - traceroute grafico
+	dentro do mtr - shift + o - exibe menu de customização
+
+
+ping6 - força ping ipv6
+
+traceroute6 - força traceroute ipv6 no destino
+
+DNS - domain name system
+
+/etc/resolve.conf
+ dentro 
+	domain gms.com.br
+	nameserver 8.8.8.8
+	
+
+dns host:
+host nomedosite - revela o nome dos ips resolvidos pelo nome
+
+host -t AAAA www.google.com - retorna onde resolver o AAAA
+
+host -t A|AAAA|mx site - pesquisa o formato do DNS
+
+
+
+day 15 - Scripts e shell
+
+#!/bin/bash - inicio pra mostrar qual shell rodar
+
+chmod 754 arquivos.sh - Tem que dar a permissão para o arquivo ser executado.
+
+if [ condição shell ]; then
+ 	condição se sim
+else
+	condição se não
+fi - finaliza condição
+
+TIPO DE CONDIÇÃO:
+[ ! -d "/var/log/" ] - [ ! negação -d => Tipo do arquivos a ser testado é diretório ; "/var/log/ - é a variável a ser testada" ]
+bash -x ./script - entra em modo debug do bash ele mostra tudo que acontecer
+
+pattern - usar caminhos absolutos nos scripts
+
+(EXIT CODES)
+exit 0 - interrompe script sem mensagem e fecha
+exit 1 - retorna mensagem quando ocorre erro
+
+Usando variaveis de ambiente:
+
+pode chamar livremente dentro do app
+
+exit code 
+$? - retorna o ultimo exit code (0 para sucesso, 1 para erro)
+
+
+chamando uma variavel
+
+read var - guarda no var o que foi escrito pelo teclado
+echo $var - exibe o conteudo
+$(comando bash) = executa um comando bash dentro da condicao.
+"" - declaracoa que interpreta variaveis dentro do texto
+`` - nao interpreta variaveis, apenas os chars
+
+loop for:
+for VAR in CONDICAO; do
+	fazalgo varias vezes
+done
+
+
+break - quebra o laco
+continue - nao quebra o laco, avanca pra proxima interacao
+
+
+CASE e[ igual ao try catch = paradeterminar fluxo
+
+case "CONDICAO" in
+	case1)
+		condicao
+	;;
+	case2)
+		condicao
+	;;
+esac
+
+
+
+argumentos:
+$1 - primeiro argumento
+$2 - segundo argumento
+$3 - terceiro argumento
+
+if [ -z "$1" ]; then
+	condicao para negar estar vazio
+	exit 1
+fi
+
+./script $1 $2 $3 (argumentos)
+
+
+condicao while 
+
+while[ condicao teste] ; do
+	loop
+done
+
+while perde variavel construida dentro dele, em um novo contexto
+
+TRUE - retorna um exit 0 sempre
+FALSE - retorna um exit 1 sempre
+
+comando 1 && comando 2 - comando E, faz uma ação do comando 2 enquanto o comando 1 for sucesso
+
+comande 1 || comando 2 - executa próximo comando apenas quando falhar o 1
+
+ls \ - abre as próximas linhas para o script
+ex.: 
+ls\
+/bin\
+
+Funções no SHELL (BASH) - 
+
+function lista_dir(){
+	script
+}
+
+
+lista_dir $1 - não precisa enviar o parametro na funcao
+
+no SH:
+
+lista_dir(){
+	script
+}
+lista_dir $1
+
+
+Diferença shells - 
+/bin/bash - mais amigável
+/bin/sh - torna script multiplataforma.
+/bin/dash - mais leve
+
+Tornando código escalável - 
+
+
+bibliotecas - 
+chamando biblioteca no script
+
+caminho absoluto nomebiblioteca - depois so chamar no script.
+
+util quando for versionar ou se o shell for muito grande.
+
+/lib/systemd/system/nginx.service - biblioteca nginx 
